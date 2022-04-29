@@ -22,4 +22,9 @@
     <ProjectReference Include="..\NSchicht.Quelle\NSchicht.Quelle.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Konkret\" />
+    <Folder Include="Validierung\" />
+  </ItemGroup>
+
 </Project>
