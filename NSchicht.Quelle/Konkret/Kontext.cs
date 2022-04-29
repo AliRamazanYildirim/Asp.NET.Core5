@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NSchicht.Core.Konkret;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,17 @@ namespace NSchicht.Quelle.Konkret
 {
     public class Kontext:DbContext
     {
+        public DbSet<Dienst> Dienste { get; set; }
+        public DbSet<Eigenschaft> Eigenschaften { get; set; }
+        public DbSet<Erfahrung> Erfahrungen { get; set; }
+        public DbSet<Faehigkeit> Faehigkeiten { get; set; }
+        public DbSet<Kontakt> Kontakte { get; set; }
+        public DbSet<Nachricht> Nachrichten { get; set; }
+        public DbSet<Aktenmappe> Aktenmappen { get; set; }
+        public DbSet<Referenz> Referenze { get; set; }
+        public DbSet<SozialerKontakt> SozialeKontakte { get; set; }
+
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=THINKPAD;Initial Catalog=AspNetCoreProjektDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");

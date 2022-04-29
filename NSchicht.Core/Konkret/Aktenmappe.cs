@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NSchicht.Core.Konkret
 {
-    public class Portfolio
+    public class Aktenmappe
     {
         [Key]
         public int PortfolioID { get; set; }
