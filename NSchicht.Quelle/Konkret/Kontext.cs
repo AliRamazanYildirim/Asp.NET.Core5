@@ -14,5 +14,6 @@ namespace NSchicht.Quelle.Konkret
             optionsBuilder.UseSqlServer("Data Source=THINKPAD;Initial Catalog=AspNetCoreProjektDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             base.OnConfiguring(optionsBuilder);
         }
+
     }
 }

@@ -18,4 +18,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NSchicht.Quelle\NSchicht.Quelle.csproj" />
+  </ItemGroup>
+
 </Project>
