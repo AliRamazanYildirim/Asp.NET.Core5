@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Konkret\" />
     <Folder Include="Validierung\" />
   </ItemGroup>
 

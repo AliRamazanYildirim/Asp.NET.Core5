@@ -16,7 +16,7 @@ namespace NSchicht.Core.Konkret
         public int Alter { get; set; }
         public string Mail { get; set; }
         public int TelefonNummer { get; set; }
-        public string Ádresse { get; set; }
+        public string Adresse { get; set; }
         public string BildUrl { get; set; }
 
 
