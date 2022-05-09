@@ -12,5 +12,9 @@ namespace Asp.NET.Core5Projekt.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult NavbarTeil()
+        {
+            return PartialView();
+        }
     }
 }
