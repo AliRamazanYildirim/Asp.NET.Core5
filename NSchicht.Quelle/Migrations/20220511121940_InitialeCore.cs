@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NSchicht.Quelle.Migrations
 {
-    public partial class Initiale : Migration
+    public partial class InitialeCore : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,9 @@ namespace NSchicht.Quelle.Migrations
                     PortfolioID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BildUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    BildUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProjektUrlBild = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProjektUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -122,7 +124,8 @@ namespace NSchicht.Quelle.Migrations
                     ClientName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Unternehmen = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Kommentar = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BildUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    BildUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -143,6 +146,25 @@ namespace NSchicht.Quelle.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SozialeKontakte", x => x.SozialerKontaktID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Übers",
+                columns: table => new
+                {
+                    ÜberID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Bezeichnung = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Alter = table.Column<int>(type: "int", nullable: false),
+                    Mail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TelefonNummer = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Adresse = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BildUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Übers", x => x.ÜberID);
                 });
         }
 
@@ -174,6 +196,9 @@ namespace NSchicht.Quelle.Migrations
 
             migrationBuilder.DropTable(
                 name: "SozialeKontakte");
+
+            migrationBuilder.DropTable(
+                name: "Übers");
         }
     }
 }

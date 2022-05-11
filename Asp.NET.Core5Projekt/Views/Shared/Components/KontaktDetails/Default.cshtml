@@ -1,0 +1,38 @@
+﻿@using NSchicht.Core.Konkret
+@model List<Kontakt>
+<div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
+    @foreach (var item in Model)
+           {
+               
+           
+        <div class="mt-3 px-1">
+            
+            <div class="h5">@item.Title</div>
+            <p>@item.Bezeichnung</p>
+            <p>Oder kontaktieren Sie mich über meine E-Mail, Skype oder meine Telefonnummer.</p>
+            <p>Mach's gut!</p>
+        </div>
+        <div class="mt-53 px-1">
+          <div class="row"> 
+            <div class="col-sm-3">
+              <div class="pb-1">Email:</div>
+            </div>
+            <div class="col-sm-8">
+              <div class="pb-1 fw-bolder">@item.Mail</div>
+            </div>
+            <div class="col-sm-3">
+              <div class="pb-1">Skype:</div>
+            </div>
+            <div class="col-sm-8">
+              <div class="pb-1 fw-bolder">username@skype.com</div>
+            </div>
+            <div class="col-sm-3">
+              <div class="pb-1">Telefonnummer:</div>
+            </div>
+            <div class="col-sm-8">
+              <div class="pb-1 fw-bolder">@item.TelefonNummer</div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>

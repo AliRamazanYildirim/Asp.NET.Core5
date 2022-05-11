@@ -1,4 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NSchicht.ArbeitsEinheit.Konkret;
+using NSchicht.Core.Konkret;
+using NSchicht.Quelle.EF;
+using System;
 
 namespace Asp.NET.Core5Projekt.Controllers
 {
@@ -14,6 +18,20 @@ namespace Asp.NET.Core5Projekt.Controllers
         }
         public PartialViewResult NavbarTeil()
         {
+            return PartialView();
+        }
+        [HttpGet]
+        public PartialViewResult SendeNachrichten()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult SendeNachrichten(Nachricht n)
+        {
+            NachrichtManager nachrichtManager = new NachrichtManager(new EfNachrichtDüo());
+            n.Datum = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            n.Status = true;
+            nachrichtManager.TInsert(n);
             return PartialView();
         }
     }

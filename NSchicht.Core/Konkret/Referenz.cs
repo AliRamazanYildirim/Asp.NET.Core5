@@ -15,5 +15,6 @@ namespace NSchicht.Core.Konkret
         public string Unternehmen { get; set; }
         public string Kommentar { get; set; }
         public string BildUrl { get; set; }
+        public string Title { get; set; }
     }
 }

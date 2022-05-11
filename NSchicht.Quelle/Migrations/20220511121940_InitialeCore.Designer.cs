@@ -10,8 +10,8 @@ using NSchicht.Quelle.Konkret;
 namespace NSchicht.Quelle.Migrations
 {
     [DbContext(typeof(Kontext))]
-    [Migration("20220429130531_Initiale")]
-    partial class Initiale
+    [Migration("20220511121940_InitialeCore")]
+    partial class InitialeCore
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,12 @@ namespace NSchicht.Quelle.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProjektUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProjektUrlBild")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PortfolioID");
@@ -187,6 +193,9 @@ namespace NSchicht.Quelle.Migrations
                     b.Property<string>("Kommentar")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Unternehmen")
                         .HasColumnType("nvarchar(max)");
 
@@ -217,6 +226,39 @@ namespace NSchicht.Quelle.Migrations
                     b.HasKey("SozialerKontaktID");
 
                     b.ToTable("SozialeKontakte");
+                });
+
+            modelBuilder.Entity("NSchicht.Core.Konkret.Über", b =>
+                {
+                    b.Property<int>("ÜberID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Adresse")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Alter")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Bezeichnung")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BildUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TelefonNummer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ÜberID");
+
+                    b.ToTable("Übers");
                 });
 #pragma warning restore 612, 618
         }

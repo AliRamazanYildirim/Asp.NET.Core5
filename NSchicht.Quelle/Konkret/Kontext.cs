@@ -10,6 +10,7 @@ namespace NSchicht.Quelle.Konkret
 {
     public class Kontext:DbContext
     {
+        public DbSet<Über> Übers { get; set; }
         public DbSet<Dienst> Dienste { get; set; }
         public DbSet<Eigenschaft> Eigenschaften { get; set; }
         public DbSet<Erfahrung> Erfahrungen { get; set; }
@@ -23,7 +24,7 @@ namespace NSchicht.Quelle.Konkret
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=THINKPAD;Initial Catalog=AspNetCoreProjektDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            optionsBuilder.UseSqlServer("Data Source=THINKPAD;Initial Catalog=SuperMappe;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             base.OnConfiguring(optionsBuilder);
         }
 

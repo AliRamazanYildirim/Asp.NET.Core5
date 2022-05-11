@@ -13,5 +13,8 @@ namespace NSchicht.Core.Konkret
         public int PortfolioID { get; set; }
         public string Name { get; set; }
         public string BildUrl { get; set; }
+        public string ProjektUrlBild { get; set; }
+        public string ProjektUrl { get; set; }
+
     }
 }
