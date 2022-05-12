@@ -1,19 +1,36 @@
-﻿
+﻿@model NSchicht.Core.Konkret.Faehigkeit
 @{
     ViewData["Title"] = "InsertFaehigkeit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <div class="card-header border-0">
+              <h3 class="mb-0">Seite zum Insert von Fähigkeiten</h3>
+            </div>
+@using(Html.BeginForm("InsertFaehigkeit","Faehigkeit", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.FaehigkeitID)
+    <br/>
+    @Html.Label("Fähigkeitstitel")
+    @Html.TextBoxFor(x=>x.Title, new {@class="from-control"})
+    <br/>
+    <label>Wert</label>
+    @Html.TextBoxFor(x=>x.Wert, new {@class="from-control"})
+    <br/>
+    <button class="btn btn-info">Hinzufügen</button>
+}
+
+@*<div class="card-header border-0">
               <h3 class="mb-0">Seite zum Hinzufügen von Fähigkeiten</h3>
             </div>
 <from class="from-group" method="post">
     <br/>
-    @Html.Label("Fähigkeitstitel")
-    <input type="text" name="Title" class="from-control"/>
+    @Html.Label("Fähigkeitstitel") 
+    <input type="text" name="Title" class="from-control"/> //funktioniert nicht
     <br/>
     <label>Wert</label>
     <input type="text" name="Wert" class="from-control"/>
-    <br/>
+   <br/>
     <button class="btn btn-primary">Hinzufügen</button>
 </from>
+*@
 

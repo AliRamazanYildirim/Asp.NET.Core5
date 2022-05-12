@@ -1,0 +1,29 @@
+﻿@model NSchicht.Core.Konkret.Erfahrung
+@{
+    ViewData["Title"] = "BearbeitenErfahrung";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card-header border-0">
+              <h3 class="mb-0">Erfahrungsbearbeitungsseite</h3>
+            </div>
+@using(Html.BeginForm("BearbeitenErfahrung","Erfahrung", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.ErfahrungID)
+    <br/>
+    @Html.Label("Erfahrungstitel")
+    @Html.TextBoxFor(x=>x.Name, new {@class="from-control"})
+    <br/>
+    <label>Datum</label>
+    @Html.TextBoxFor(x=>x.Datum, new {@class="from-control"})
+    <br/>
+     <label>Bild Url</label>
+    @Html.TextBoxFor(x=>x.BildUrl, new {@class="from-control"})
+    <br/>
+     <label>Bezeichnung</label>
+    @Html.TextAreaFor(x=>x.Bezeichnung,3,10, new {@class="from-control"})
+    <br/>
+    <button class="btn btn-outline-success">Bearbeiten</button>
+}
+
