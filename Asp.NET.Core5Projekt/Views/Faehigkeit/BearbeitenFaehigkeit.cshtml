@@ -1,0 +1,21 @@
+﻿@model NSchicht.Core.Konkret.Faehigkeit
+@{
+    ViewData["Title"] = "BearbeitenFaehigkeit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card-header border-0">
+              <h3 class="mb-0">Seite zum Bearbeiten von Fähigkeiten</h3>
+            </div>
+@using(Html.BeginForm("BearbeitenFaehigkeit","Faehigkeit", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.FaehigkeitID)
+    <br/>
+    @Html.Label("Fähigkeitstitel")
+    @Html.TextBoxFor(x=>x.Title, new {@class="from-control"})
+    <br/>
+    <label>Wert</label>
+    @Html.TextBoxFor(x=>x.Wert, new {@class="from-control"})
+    <br/>
+    <button class="btn btn-success">Bearbeiten</button>
+}
+

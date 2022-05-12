@@ -1,0 +1,51 @@
+﻿@using NSchicht.Core.Konkret
+@model List<Faehigkeit>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+              <h3 class="mb-0">Tabelle der Fähigkeitsliste</h3>
+            </div>
+            <!-- Light table -->
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col" class="sort" data-sort="name">#</th>
+                    <th scope="col" class="sort" data-sort="budget">Title</th>
+                    <th scope="col" class="sort" data-sort="status">Proportion</th>
+                    <th scope="col">Löschen</th>
+                    <th scope="col" class="sort" data-sort="completion">Bearbeiten</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody class="list">
+                    @foreach (var item in Model)
+                   {
+                       <tr>
+                    <th> 
+                        @item.FaehigkeitID
+                    </th>
+                    <td class="budget">
+                      @item.Title
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="completion mr-2">@item.Wert%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="@item.Wert" aria-valuemin="0" aria-valuemax="100" style="width: @item.Wert%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><a href="/Faehigkeit/LöschenFaehigkeit/@item.FaehigkeitID" class ="btn btn-danger">Löschen</a></td>
+                    <td><a href="/Faehigkeit/BearbeitenFaehigkeit/@item.FaehigkeitID" class ="btn btn-success">Bearbeiten</a></td>
+                  </tr>
+                   }  
+                </tbody>
+              </table>
+              <a href="/Faehigkeit/InsertFaehigkeit/" class="btn btn-primary"> Neue Fähigkeit Hinzufügen</a>
+            </div>
