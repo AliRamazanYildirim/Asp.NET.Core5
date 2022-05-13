@@ -1,0 +1,73 @@
+﻿@using NSchicht.Core.Konkret
+@model List<Aktenmappe>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+        <div class="col">
+          <div class="card bg-default shadow">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="text-white mb-0">Meine Aktenmappen</h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-dark table-flush">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col" class="sort" data-sort="name">Projekt</th>
+                    <th scope="col" class="sort" data-sort="budget">Preis</th>
+                    <th scope="col" class="sort" data-sort="status">Status</th>
+                    <th scope="col" class="sort" data-sort="completion">Fertigstellung</th>
+                    <th scope="col">Löschen</th>
+                    <th scope="col">Bearbeiten</th>
+                  </tr>
+                </thead>
+                <tbody class="list">
+                    @foreach (var item in Model)
+                   {
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <a href="#" class="avatar rounded-circle mr-3">
+                          <img alt="Image placeholder" src="@item.Projekt">
+                        </a>
+                        <div class="media-body">
+                          <span class="name mb-0 text-sm">@item.Name</span>
+                        </div>
+                      </div>
+                    </th>
+                    <td class="budget">
+                      €@item.Preis EUR
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-success"></i>
+                        <span class="status">Abgeschlossen</span>
+                      </span>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="completion mr-2">@item.Proportion%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="@item.Proportion" aria-valuemin="0" aria-valuemax="100" style="width: @item.Proportion%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-right">
+                    </td>
+                    <td><a href="/Aktenmappe/LöschenAktenmappe/@item.PortfolioID" class="btn btn-outline-danger">Löschen</a></td>
+                    <td><a href="/Aktenmappe/BearbeitenAktenmappe/@item.PortfolioID" class="btn btn-outline-warning">Bearbeiten</a></td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+              <br/>
+              <a href="/Aktenmappe/InsertAktenmappe/" class="btn btn-outline-primary"> Neue Erfahrung Hinzufügen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+

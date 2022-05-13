@@ -1,0 +1,63 @@
+﻿@model NSchicht.Core.Konkret.Aktenmappe
+@{
+    ViewData["Title"] = "InsertAktenmappe";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+              <h3 class="mb-0">Aktenmappe hinzufügen Seite.</h3>
+            </div>
+            <br/>
+@using(Html.BeginForm("InsertAktenmappe","Aktenmappe", FormMethod.Post))
+{
+    <div class="col-lg-12">
+    <div class="form-group">
+    @Html.Label("Aktenmappestitel")
+    @Html.TextBoxFor(x=>x.Name, new {@class="from-control"})
+    @Html.ValidationMessageFor(x=>x.Name)
+    <br/>
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+    <label>BildUrl</label>
+    @Html.TextBoxFor(x=>x.BildUrl, new {@class="from-control"})
+    @Html.ValidationMessageFor(x=>x.BildUrl)
+    <br/>
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+    <label>ProjektUrlBild</label>
+    @Html.TextBoxFor(x=>x.ProjektUrlBild, new {@class="from-control"})
+    @Html.ValidationMessageFor(x=>x.ProjektUrlBild)
+    <br/>
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+     <label>Projekt Url</label>
+    @Html.TextBoxFor(x=>x.ProjektUrl, new {@class="from-control"})
+    @Html.ValidationMessageFor(x=>x.ProjektUrl)
+    <br/>
+    </div>
+    </div>
+     <div class="col-lg-6">
+    <div class="form-group">
+     <label>Preis</label>
+    @Html.TextBoxFor(x=>x.Preis, new {@class="from-control"})
+    @Html.ValidationMessageFor(x=>x.Preis)
+    <br/>
+    </div>
+    </div>
+     <div class="col-lg-6">
+    <div class="form-group">
+     <label>Proportion</label>
+    @Html.TextBoxFor(x=>x.Proportion, new {@class="from-control"})
+    @Html.ValidationMessageFor(x=>x.Proportion)
+    <br/>
+    </div>
+    </div>
+    <button class="btn btn-info">Hinzufügen</button>
+}
+

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NSchicht.Quelle.Konkret;
 
 namespace NSchicht.Quelle.Migrations
 {
     [DbContext(typeof(Kontext))]
-    partial class KontextModelSnapshot : ModelSnapshot
+    [Migration("20220513074522_Initiale_neuewerte_aktenmappe")]
+    partial class Initiale_neuewerte_aktenmappe
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

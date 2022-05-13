@@ -15,6 +15,16 @@ namespace NSchicht.Core.Konkret
         public string BildUrl { get; set; }
         public string ProjektUrlBild { get; set; }
         public string ProjektUrl { get; set; }
+        public string Projekt { get; set; }
+        public int Preis { get; set; }
+        public bool Status { get; set; }
+        public string ProjektBild1 { get; set; }
+        public string ProjektBild2 { get; set; }
+        public string ProjektBild3 { get; set; }
+        public string ProjektBild4 { get; set; }
+        public int Proportion { get; set; }
+
+
 
     }
 }
