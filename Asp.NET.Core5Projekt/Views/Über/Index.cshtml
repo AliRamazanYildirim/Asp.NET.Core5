@@ -1,0 +1,37 @@
+﻿@model NSchicht.Core.Konkret.Über
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+              <h3 class="mb-0">Über bearbeiten Seite</h3>
+            </div>
+@using(Html.BeginForm("Index","Über", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.ÜberID)
+    <br/>
+    <label>Header</label>
+    @Html.TextBoxFor(x=>x.Title, new {@class="from-control"})
+    <br/>
+    <label>Bezeichnung </label>
+    @Html.TextAreaFor(x=>x.Bezeichnung,10,50, new {@class="from-control"})
+    <br/>
+    <label>Alter </label>
+    @Html.TextBoxFor(x=>x.Alter, new {@class="from-control"})
+    <br/>
+    <label>Mail </label>
+    @Html.TextBoxFor(x=>x.Mail, new {@class="from-control"})
+    <br/>
+    <label>Telefonnummer </label>
+    @Html.TextBoxFor(x=>x.TelefonNummer, new {@class="from-control"})
+    <br/>
+    <label>Adresse </label>
+    @Html.TextBoxFor(x=>x.Adresse, new {@class="from-control"})
+    <br/>
+    <label>Bild </label>
+    @Html.TextBoxFor(x=>x.BildUrl, new {@class="from-control"})
+    <br/>
+    <button class="btn btn-success">Bearbeiten</button>
+}
+
