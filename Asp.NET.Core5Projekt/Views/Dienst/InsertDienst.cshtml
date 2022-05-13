@@ -1,0 +1,23 @@
+﻿@model NSchicht.Core.Konkret.Dienst
+@{
+    ViewData["Title"] = "InsertDienst";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+              <h3 class="mb-0">Dienstshinzufügensseite</h3>
+            </div>
+            <br/>
+@using(Html.BeginForm("InsertDienst","Dienst", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.DienstID)
+    <br/>
+    @Html.Label("Dienststitel")
+    @Html.TextBoxFor(x=>x.Title, new {@class="from-control"})
+    <br/>
+     <label>Bild Url</label>
+    @Html.TextBoxFor(x=>x.BildUrl, new {@class="from-control"})
+    <br/>
+    <button class="btn btn-info">Hinzufügen</button>
+}
+

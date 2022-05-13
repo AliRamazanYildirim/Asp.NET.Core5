@@ -1,0 +1,22 @@
+﻿@model NSchicht.Core.Konkret.Dienst
+@{
+    ViewData["Title"] = "BearbeitenDienst";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+              <h3 class="mb-0">Dienstsbearbeitungsseite</h3>
+            </div>
+@using(Html.BeginForm("BearbeitenDienst","Dienst", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.DienstID)
+    <br/>
+    @Html.Label("Dienststitel")
+    @Html.TextBoxFor(x=>x.Title, new {@class="from-control"})
+    <br/>
+     <label>Bild Url</label>
+    @Html.TextBoxFor(x=>x.BildUrl, new {@class="from-control"})
+    <br/>
+    <button class="btn btn-outline-success">Bearbeiten</button>
+}
+
