@@ -1,8 +1,26 @@
-﻿
+﻿@model NSchicht.Core.Konkret.Eigenschaft
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="card-header border-0">
+              <h3 class="mb-0">Eigenschaft bearbeiten Seite</h3>
+            </div>
+@using(Html.BeginForm("Index","Eigenschaft", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.EigenschaftID)
+    <br/>
+    <label>Header</label>
+    @Html.TextBoxFor(x=>x.Header, new {@class="from-control"})
+    <br/>
+    <label>Name </label>
+    @Html.TextBoxFor(x=>x.Name, new {@class="from-control"})
+    <br/>
+    <label>Aufgabe </label>
+    @Html.TextBoxFor(x=>x.Title, new {@class="from-control"})
+    <br/>
+    <button class="btn btn-success">Bearbeiten</button>
+}
+
 
