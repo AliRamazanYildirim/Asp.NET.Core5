@@ -21,7 +21,6 @@ namespace NSchicht.Core.Konkret
         public string ProjektBild1 { get; set; }
         public string ProjektBild2 { get; set; }
         public string ProjektBild3 { get; set; }
-        public string ProjektBild4 { get; set; }
         public int Proportion { get; set; }
 
 

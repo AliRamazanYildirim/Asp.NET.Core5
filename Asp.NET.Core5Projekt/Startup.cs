@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NSchicht.Core.Konkret;
+using NSchicht.Quelle.Konkret;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,8 @@ namespace Asp.NET.Core5Projekt
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Kontext>();
+            services.AddIdentity<IdentityBenutzer, BenutzerRolle>().AddEntityFrameworkStores<Kontext>();
             services.AddControllersWithViews();
         }
 
@@ -41,7 +45,7 @@ namespace Asp.NET.Core5Projekt
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -51,6 +55,13 @@ namespace Asp.NET.Core5Projekt
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}"
+                );
             });
         }
     }

@@ -1,0 +1,64 @@
+﻿@using NSchicht.Core.Konkret
+@model List<Aktenmappe>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BenutzerLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Meine Projekte</h4>
+
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Bild
+                          </th>
+                          <th>
+                            Projektname
+                          </th>
+                          <th>
+                            Progress
+                          </th>
+                          <th>
+                            Preis
+                          </th>
+                          <th>
+                            Einsendeschluss
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @foreach (var item in Model)
+                         {
+
+                        <tr>
+                          <td class="py-1">
+                            <img src="@item.BildUrl" alt="image"/>
+                          </td>
+                          <td>
+                            @item.Name
+                          </td>
+                          <td>
+                            <div class="progress">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="@item.Proportion" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>
+                            @item.Preis
+                          </td>
+                          <td>
+                            @item.Proportion
+                          </td>
+                        </tr>                          
+                         }
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
