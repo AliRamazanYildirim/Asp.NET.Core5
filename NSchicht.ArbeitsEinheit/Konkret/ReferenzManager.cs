@@ -34,6 +34,11 @@ namespace NSchicht.ArbeitsEinheit.Konkret
             return _referenzDüo.RufAlleDaten();
         }
 
+        public List<Referenz> TRufListeZurFilter()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Referenz TRufZurID(int ID)
         {
            return _referenzDüo.RufZurID(ID);

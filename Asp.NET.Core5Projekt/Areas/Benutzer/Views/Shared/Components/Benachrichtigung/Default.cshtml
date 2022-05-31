@@ -1,0 +1,32 @@
+﻿@using NSchicht.Core.Konkret
+@model List<ToDoList>
+@{string wert = "gelesen";}
+    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Benachrichtigungen</p>
+              @foreach (var item in Model)
+              {
+                  if(item.Status==true)
+        {
+            wert = "preview-icon bg-success";
+            
+        }
+        else
+        {
+            wert = "preview-icon bg-danger";
+            
+        }
+        <a class="dropdown-item preview-item" href="/Benutzer/Benutzer/ToDoListEinzelheiten/@item.Inhalt">
+                <div class="preview-thumbnail">
+                  <div class="@wert">
+                    <i class="ti-info-alt mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">@item.Inhalt</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    @item.Status
+                  </p>
+                </div>
+              </a>                      
+              }
+            </div>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,5 +14,6 @@ namespace NSchicht.Quelle.Abstrakt
         void Löschen(T einheit);
         List<T> RufAlleDaten();
         T RufZurID(int ID);
+        List<T> RufZurFilter(Expression<Func<T,bool>>filter);
     }
 }

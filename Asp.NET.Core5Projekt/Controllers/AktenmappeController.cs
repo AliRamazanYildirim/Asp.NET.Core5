@@ -62,7 +62,7 @@ namespace Asp.NET.Core5Projekt.Controllers
             ViewBag.w2 = "Aktenmappen";
             ViewBag.w3 = "Aktenmappeliste";
             var werte = aktenmappeManager.TRufZurID(ID);
-            return View("Index");
+            return View(werte);
         }
         [HttpPost]
         public IActionResult BearbeitenAktenmappe(Aktenmappe a)

@@ -2,7 +2,7 @@
 @model List<Faehigkeit>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NeuerAdministratorLayout.cshtml";
 }
 
 <div class="card-header border-0">
@@ -41,11 +41,11 @@
                         </div>
                       </div>
                     </td>
-                    <td><a href="/Faehigkeit/LöschenFaehigkeit/@item.FaehigkeitID" class ="btn btn-danger">Löschen</a></td>
-                    <td><a href="/Faehigkeit/BearbeitenFaehigkeit/@item.FaehigkeitID" class ="btn btn-success">Bearbeiten</a></td>
+                    <td><a href="/Faehigkeit/LöschenFaehigkeit/@item.FaehigkeitID" class ="btn btn-outline-danger">Löschen</a></td>
+                    <td><a href="/Faehigkeit/BearbeitenFaehigkeit/@item.FaehigkeitID" class ="btn btn-outline-success">Bearbeiten</a></td>
                   </tr>
                    }  
                 </tbody>
               </table>
-              <a href="/Faehigkeit/InsertFaehigkeit/" class="btn btn-primary"> Neue Fähigkeit Hinzufügen</a>
+              <a href="/Faehigkeit/InsertFaehigkeit/" class="btn btn-outline-primary"> Neue Fähigkeit Hinzufügen</a>
             </div>

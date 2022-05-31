@@ -1,5 +1,5 @@
 ﻿@using NSchicht.Core.Konkret
-@model List<Aktenmappe>
+@model List<ToDoList>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_BenutzerLayout.cshtml";
@@ -8,51 +8,46 @@
 <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Meine Projekte</h4>
+                  <h4 class="card-title">Aufgabenliste</h4>
 
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
                           <th>
-                            Bild
+                           #
                           </th>
                           <th>
-                            Projektname
+                            Inhalt
                           </th>
                           <th>
                             Progress
                           </th>
                           <th>
-                            Preis
-                          </th>
-                          <th>
-                            Einsendeschluss
+                            Status
                           </th>
                         </tr>
                       </thead>
                       <tbody>
                           @foreach (var item in Model)
                          {
-
-                        <tr>
-                          <td class="py-1">
-                            <img src="@item.BildUrl" alt="image"/>
+                          
+                            <tr>
+                          <td>
+                            @item.ID
                           </td>
                           <td>
-                            @item.Name
+                            @item.Inhalt
                           </td>
                           <td>
                             <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="@item.Proportion" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="@item.Status" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                           </td>
                           <td>
-                            @item.Preis
+                            @item.Status
                           </td>
-                          <td>
-                            @item.Proportion
-                          </td>
+                          <td><a href="/Benutzer/Benutzer/ToDoListEinzelheiten/@item.ID" class="btn btn-outline-primary">Einzelheiten</a></td>
                         </tr>                          
                          }
                       </tbody>

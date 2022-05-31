@@ -44,7 +44,7 @@ namespace Asp.NET.Core5Projekt.Controllers
             ViewBag.w2 = "Dienste";
             ViewBag.w3 = "Dienst Bearbeiten";
             var werte = dienstManager.TRufZurID(ID);
-            return View("Index");
+            return View(werte);
         }
         [HttpPost]
         public IActionResult BearbeitenDienst(Dienst d)

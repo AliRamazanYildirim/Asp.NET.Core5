@@ -1,0 +1,33 @@
+﻿@model NSchicht.Core.Konkret.Kontakt
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NeuerAdministratorLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Kontakt Fußzeile Bearbeitungsseite</h4>
+                  <form class="pt-3" method="post" >
+                      @Html.HiddenFor(x=>x.KontaktID)
+                     <div class="form-group">
+                      <label for="exampleInputName1">Header</label>
+                      <input type="text" asp-for="Title" class="form-control" id="exampleInputName1" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Telefonnummer</label>
+                      <input type="text" asp-for="TelefonNummer" class="form-control" id="exampleInputName1" placeholder="Telefonnummer">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">E-Mail</label>
+                      <input type="text" asp-for="Mail" class="form-control" id="exampleInputName1" placeholder="Mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleTextarea1">Bezeichnung</label>
+                        <textarea class="form-control" asp-for="Bezeichnung" id="exampleTextarea1" rows="4"></textarea>
+                      </div>
+                    <button type="submit" class="btn btn-outline-primary mr-2">Hinzufügen</button>
+                    </form>
+                </div>
+              </div>
+            </div>

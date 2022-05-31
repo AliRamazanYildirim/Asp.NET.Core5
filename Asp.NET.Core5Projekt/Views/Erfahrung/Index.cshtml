@@ -2,43 +2,42 @@
 @model List<Erfahrung>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NeuerAdministratorLayout.cshtml";
 }
 
-<div class="card-header border-0">
-              <h3 class="mb-0">Tabelle der Erfahrungsliste</h3>
-            </div>
-            <!-- Light table -->
-            <div class="table-responsive">
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col" class="sort" data-sort="name">#</th>
-                    <th scope="col" class="sort" data-sort="budget">Title</th>
-                    <th scope="col" class="sort" data-sort="status">Datum</th>
-                    <th scope="col">Löschen</th>
-                    <th scope="col" class="sort" data-sort="completion">Bearbeiten</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody class="list">
-                    @foreach (var item in Model)
-                   {
-                    <tr>
-                    <th> 
-                        @item.ErfahrungID
-                    </th>
-                    <th class="budget">
-                      @item.Name
-                    </th>
-                    <td>
-                      @item.Datum
-                    </td>
-                    <td><a href="/Erfahrung/LöschenErfahrung/@item.ErfahrungID" class ="btn btn-danger">Löschen</a></td>
-                    <td><a href="/Erfahrung/BearbeitenErfahrung/@item.ErfahrungID" class ="btn btn-success">Bearbeiten</a></td>
-                  </tr>
-                   }  
-                </tbody>
-              </table>
-              <a href="/Erfahrung/InsertErfahrung/" class="btn btn-primary"> Neue Erfahrung Hinzufügen</a>
+<div class="row">
+
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Erfahrungen</h4>
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th> # </th>
+                            <th> Name </th>
+                            <th> Datum </th>
+                            <th> Löschen </th>
+                            <th> Bearbeiten </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                           {
+                          <tr>
+                            <td> @item.ErfahrungID </td>
+                            <td> @item.Name </td>
+                            <td> @item.Datum </td>
+                            <td><a href="/Erfahrung/LöschenErfahrung/@item.ErfahrungID" class ="btn btn-outline-danger">Löschen</a></td>
+                            <td><a href="/Erfahrung/BearbeitenErfahrung/@item.ErfahrungID" class ="btn btn-outline-success">Bearbeiten</a></td>
+                          </tr>                            
+                           }
+                        </tbody>
+                      </table>
+                       <a href="/Erfahrung/InsertErfahrung/" class="btn btn-outline-primary"> Neue Erfahrung Hinzufügen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>

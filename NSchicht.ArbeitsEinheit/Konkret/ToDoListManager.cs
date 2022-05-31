@@ -38,9 +38,14 @@ namespace NSchicht.ArbeitsEinheit.Konkret
             return _toDoListDüo.RufAlleDaten();
         }
 
-        public ToDoList TRufZurID(int ID)
+        public List<ToDoList> TRufListeZurFilter()
         {
             throw new NotImplementedException();
+        }
+
+        public  ToDoList TRufZurID(int ID)
+        {
+            return _toDoListDüo.RufZurID(ID);
         }
     }
 }

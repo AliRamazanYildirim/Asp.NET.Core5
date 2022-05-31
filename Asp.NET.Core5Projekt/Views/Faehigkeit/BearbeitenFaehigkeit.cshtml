@@ -1,9 +1,33 @@
 ﻿@model NSchicht.Core.Konkret.Faehigkeit
 @{
     ViewData["Title"] = "BearbeitenFaehigkeit";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NeuerAdministratorLayout.cshtml";
 }
-<div class="card-header border-0">
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Seite zum Bearbeiten von Fähigkeiten</h4>
+                  @using(Html.BeginForm("BearbeitenFaehigkeit","Faehigkeit", FormMethod.Post))
+                  {
+                    <div class="form-group">
+                      <label for="exampleInputName1">ID</label>
+                      <input type="text" asp-for="FaehigkeitID"  class="form-control" id="exampleInputName1" placeholder="Name">
+                    </div>
+                     <div class="form-group">
+                      <label for="exampleInputName1">Title</label>
+                      <input type="text" asp-for="Title" class="form-control" id="exampleInputName1" placeholder="Nachname">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Wert</label>
+                      <input type="text" asp-for="Wert" class="form-control" id="exampleInputName1" placeholder="Nachname">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary mr-2">Bearbeiten</button>
+                    <button class="btn btn-light">Abbrechen</button>
+                    }
+                </div>
+              </div>
+            </div>
+@*<div class="card-header border-0">
               <h3 class="mb-0">Seite zum Bearbeiten von Fähigkeiten</h3>
             </div>
 @using(Html.BeginForm("BearbeitenFaehigkeit","Faehigkeit", FormMethod.Post))
@@ -17,5 +41,5 @@
     @Html.TextBoxFor(x=>x.Wert, new {@class="from-control"})
     <br/>
     <button class="btn btn-success">Bearbeiten</button>
-}
+}*@
 

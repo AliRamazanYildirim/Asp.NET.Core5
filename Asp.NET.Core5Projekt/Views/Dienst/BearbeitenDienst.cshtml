@@ -1,10 +1,29 @@
 ﻿@model NSchicht.Core.Konkret.Dienst
 @{
     ViewData["Title"] = "BearbeitenDienst";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NeuerAdministratorLayout.cshtml";
 }
-
-<div class="card-header border-0">
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Dienstsbearbeitungsseite</h4>
+                  @using(Html.BeginForm("BearbeitenDienst","Dienst", FormMethod.Post))
+                  {
+                      @Html.HiddenFor(x=>x.DienstID)
+                     <div class="form-group">
+                      <label for="exampleInputName1">Title</label>
+                      <input type="text" asp-for="Title" class="form-control" id="exampleInputName1" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">BildUrl</label>
+                      <input type="text" asp-for="BildUrl" class="form-control" id="exampleInputName1" placeholder="BildUrl">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary mr-2">Bearbeiten</button>
+                    }
+                </div>
+              </div>
+            </div>
+@*<div class="card-header border-0">
               <h3 class="mb-0">Dienstsbearbeitungsseite</h3>
             </div>
 @using(Html.BeginForm("BearbeitenDienst","Dienst", FormMethod.Post))
@@ -20,3 +39,4 @@
     <button class="btn btn-outline-success">Bearbeiten</button>
 }
 
+*@

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NSchicht.ArbeitsEinheit.Konkret;
+using NSchicht.Core.Konkret;
 using NSchicht.Quelle.EF;
 
 namespace Asp.NET.Core5Projekt.Areas.Benutzer.Controllers
@@ -9,11 +10,17 @@ namespace Asp.NET.Core5Projekt.Areas.Benutzer.Controllers
     [Authorize]
     public class BenutzerController : Controller
     {
-        AktenmappeManager aktenmappeManager = new AktenmappeManager(new EfAktenmappeDüo());
+        ToDoListManager toDoListManager = new ToDoListManager(new EfToDoListDüo());
         public IActionResult Index()
         {
-            var werte = aktenmappeManager.TRufAlleDaten();
+            var werte = toDoListManager.TRufAlleDaten();
             return View(werte);
+        }
+        [HttpGet]
+        public IActionResult ToDoListEinzelheiten(int ID)
+        {
+            ToDoList toDoList = toDoListManager.TRufZurID(ID);
+            return View(toDoList);
         }
     }
 }

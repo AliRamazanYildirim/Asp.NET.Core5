@@ -38,6 +38,11 @@ namespace NSchicht.ArbeitsEinheit.Konkret
             return _kontaktDüo.RufAlleDaten();
         }
 
+        public List<Kontakt> TRufListeZurFilter()
+        {
+            throw new NotImplementedException();
+        }
+
         public Kontakt TRufZurID(int ID)
         {
             return _kontaktDüo.RufZurID(ID);

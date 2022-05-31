@@ -34,6 +34,11 @@ namespace NSchicht.ArbeitsEinheit.Konkret
            return _faehigkeitDüo.RufAlleDaten();
         }
 
+        public List<Faehigkeit> TRufListeZurFilter()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Faehigkeit TRufZurID(int ID)
         {
            return _faehigkeitDüo.RufZurID(ID);

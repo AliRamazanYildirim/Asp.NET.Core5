@@ -7,13 +7,14 @@ namespace Asp.NET.Core5Projekt.Controllers
 {
     public class FaehigkeitController : Controller
     {
-        FaehigkeitManager faehigkeitManager = new FaehigkeitManager(new EfFaehigkeitDüo());
+        FaehigkeitManager _faehigkeitManager = new FaehigkeitManager(new EfFaehigkeitDüo());
+
         public IActionResult Index()
         {
             ViewBag.w1 = "Fähigkeitliste";
             ViewBag.w2 = "Fähigkeiten";
             ViewBag.w3 = "Fähigkeitliste";
-            var werte = faehigkeitManager.TRufAlleDaten();
+            var werte = _faehigkeitManager.TRufAlleDaten();
             return View(werte);
         }
         [HttpGet]
@@ -27,13 +28,13 @@ namespace Asp.NET.Core5Projekt.Controllers
         [HttpPost]
         public IActionResult InsertFaehigkeit(Faehigkeit f)
         {
-            faehigkeitManager.TInsert(f);
+            _faehigkeitManager.TInsert(f);
             return RedirectToAction("Index");
         }
         public IActionResult LöschenFaehigkeit(int ID)
         {
-            var werte = faehigkeitManager.TRufZurID(ID);
-            faehigkeitManager.TLöschen(werte);
+            var werte = _faehigkeitManager.TRufZurID(ID);
+            _faehigkeitManager.TLöschen(werte);
             return RedirectToAction("Index");
         }
         [HttpGet]
@@ -42,13 +43,13 @@ namespace Asp.NET.Core5Projekt.Controllers
             ViewBag.w1 = "Fähigkeiten Bearbeiten";
             ViewBag.w2 = "Fähigkeiten";
             ViewBag.w3 = "Fähigkeiten Bearbeiten";
-            var werte = faehigkeitManager.TRufZurID(ID);
+            var werte = _faehigkeitManager.TRufZurID(ID);
             return View("Index");
         }
         [HttpPost]
         public IActionResult BearbeitenFaehigkeit(Faehigkeit f)
         {
-            faehigkeitManager.TAktualisieren(f);
+            _faehigkeitManager.TAktualisieren(f);
             return RedirectToAction("Index");
         }
     }

@@ -60,7 +60,7 @@ namespace Asp.NET.Core5Projekt
             {
                 endpoints.MapControllerRoute(
                   name: "areas",
-                  pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}"
+                  pattern: "{area:exists}/{controller=Benutzer}/{action=Index}/{id?}"
                 );
             });
         }

@@ -1,0 +1,37 @@
+﻿@model NSchicht.Core.Konkret.Referenz
+@{
+    ViewData["Title"] = "BearbeitenReferenz";
+    Layout = "~/Views/Shared/_NeuerAdministratorLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Seite zum Bearbeiten von Referenzen</h4>
+                  <form class="pt-3" method="post" >                   
+                     <div class="form-group">
+                      <label for="exampleInputName1">Name</label>
+                      <input type="text" asp-for="ClientName" class="form-control" id="exampleInputName1" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Unternehmen</label>
+                      <input type="text" asp-for="Unternehmen" class="form-control" id="exampleInputName1" placeholder="Unternehmen">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Title</label>
+                      <input type="text" asp-for="Title" class="form-control" id="exampleInputName1" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Bild</label>
+                      <input type="text" asp-for="BildUrl" class="form-control" id="exampleInputName1" placeholder="Bild">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleTextarea1">Title</label>
+                        <textarea class="form-control" asp-for="Kommentar" id="exampleTextarea1" rows="4"></textarea>
+                      </div>
+                    <button type="submit" class="btn btn-outline-primary mr-2">Bearbeiten</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+

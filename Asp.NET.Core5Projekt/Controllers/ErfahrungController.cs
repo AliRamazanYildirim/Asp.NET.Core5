@@ -7,13 +7,13 @@ namespace Asp.NET.Core5Projekt.Controllers
 {
     public class ErfahrungController : Controller
     {
-        ErfahrungManager erfahrungManager = new ErfahrungManager(new EfErfahrungDüo());
+        ErfahrungManager _erfahrungManager = new ErfahrungManager(new EfErfahrungDüo());
         public IActionResult Index()
         {
             ViewBag.w1 = "Erfahrungliste";
             ViewBag.w2 = "Erfahrungen";
             ViewBag.w3 = "Erfahrungliste";
-            var werte = erfahrungManager.TRufAlleDaten();
+            var werte = _erfahrungManager.TRufAlleDaten();
             return View(werte);
         }
         [HttpGet]
@@ -27,13 +27,13 @@ namespace Asp.NET.Core5Projekt.Controllers
         [HttpPost]
         public IActionResult InsertErfahrung(Erfahrung e)
         {
-            erfahrungManager.TInsert(e);
+            _erfahrungManager.TInsert(e);
             return RedirectToAction("Index");
         }
         public IActionResult LöschenErfahrung(int ID)
         {
-            var werte = erfahrungManager.TRufZurID(ID);
-            erfahrungManager.TLöschen(werte);
+            var werte = _erfahrungManager.TRufZurID(ID);
+            _erfahrungManager.TLöschen(werte);
             return RedirectToAction("Index");
         }
         [HttpGet]
@@ -42,13 +42,13 @@ namespace Asp.NET.Core5Projekt.Controllers
             ViewBag.w1 = "Erfahrungen Bearbeiten";
             ViewBag.w2 = "Erfahrungen";
             ViewBag.w3 = "Erfahrungen Bearbeiten";
-            var werte = erfahrungManager.TRufZurID(ID);
-            return View("Index");
+            var werte = _erfahrungManager.TRufZurID(ID);
+            return View(werte);
         }
         [HttpPost]
         public IActionResult BearbeitenErfahrung(Erfahrung e)
         {
-            erfahrungManager.TAktualisieren(e);
+            _erfahrungManager.TAktualisieren(e);
             return RedirectToAction("Index");
         }
     }

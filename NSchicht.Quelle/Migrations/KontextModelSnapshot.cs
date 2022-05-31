@@ -165,66 +165,37 @@ namespace NSchicht.Quelle.Migrations
                     b.ToTable("Aktenmappen");
                 });
 
-            modelBuilder.Entity("NSchicht.Core.Konkret.Benutzer", b =>
+            modelBuilder.Entity("NSchicht.Core.Konkret.AnwenderNachricht", b =>
                 {
-                    b.Property<int>("BenutzerID")
+                    b.Property<int>("AnwenderNachrichtID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BenutzerName")
+                    b.Property<string>("Absender")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BildUrl")
+                    b.Property<string>("AbsenderName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Mail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nachname")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Passwort")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("BenutzerID");
-
-                    b.ToTable("Benutzers");
-                });
-
-            modelBuilder.Entity("NSchicht.Core.Konkret.BenutzerNachricht", b =>
-                {
-                    b.Property<int>("NachrichtID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("BenutzerID")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("Datum")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Empfaenger")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmpfaengerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gegenstand")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Inhalt")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                    b.HasKey("AnwenderNachrichtID");
 
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("NachrichtID");
-
-                    b.HasIndex("BenutzerID");
-
-                    b.ToTable("BenutzerNachrichten");
+                    b.ToTable("AnwenderNachrichten");
                 });
 
             modelBuilder.Entity("NSchicht.Core.Konkret.BenutzerRolle", b =>
@@ -615,22 +586,6 @@ namespace NSchicht.Quelle.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("NSchicht.Core.Konkret.BenutzerNachricht", b =>
-                {
-                    b.HasOne("NSchicht.Core.Konkret.Benutzer", "Benutzers")
-                        .WithMany("BenutzerNachrichten")
-                        .HasForeignKey("BenutzerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Benutzers");
-                });
-
-            modelBuilder.Entity("NSchicht.Core.Konkret.Benutzer", b =>
-                {
-                    b.Navigation("BenutzerNachrichten");
                 });
 #pragma warning restore 612, 618
         }

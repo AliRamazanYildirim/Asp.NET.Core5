@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Asp.NET.Core5Projekt.Areas.Benutzer.Controllers
 {
     [Area("Benutzer")]
+    [Route("Benutzer/[controller]/[action]")]
     public class RegistrierenController : Controller
     {
         private readonly UserManager<IdentityBenutzer> _userManager;
@@ -38,7 +39,7 @@ namespace Asp.NET.Core5Projekt.Areas.Benutzer.Controllers
                     var resultat = await _userManager.CreateAsync(identityBenutzer, benutzerRegistrierenZeigModell.Passwort);
                 if(resultat.Succeeded)
                 {
-                    return RedirectToAction("Index","Login");
+                    return RedirectToAction("Index", "Anmeldung");
                 }
                 else
                 {

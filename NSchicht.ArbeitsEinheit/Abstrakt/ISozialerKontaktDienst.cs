@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NSchicht.ArbeitsEinheit.Abstrakt
 {
-    public interface ISozialerKontaktdienst:IGenerischesDienst<SozialerKontakt>
+    public interface ISozialerKontaktDienst:IGenerischesDienst<SozialerKontakt>
     {
     }
 }

@@ -34,6 +34,11 @@ namespace NSchicht.ArbeitsEinheit.Konkret
             return _erfahrungDüo.RufAlleDaten();
         }
 
+        public List<Erfahrung> TRufListeZurFilter()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Erfahrung TRufZurID(int ID)
         {
             return _erfahrungDüo.RufZurID(ID);

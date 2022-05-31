@@ -38,6 +38,11 @@ namespace NSchicht.ArbeitsEinheit.Konkret
            return _aktenmappeDüo.RufAlleDaten();
         }
 
+        public List<Aktenmappe> TRufListeZurFilter()
+        {
+            throw new NotImplementedException();
+        }
+
         public Aktenmappe TRufZurID(int ID)
         {
             return _aktenmappeDüo.RufZurID(ID);

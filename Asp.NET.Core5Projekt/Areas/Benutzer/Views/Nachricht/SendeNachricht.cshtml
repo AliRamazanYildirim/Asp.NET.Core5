@@ -1,0 +1,30 @@
+﻿@model NSchicht.Core.Konkret.AnwenderNachricht
+@{
+    ViewData["Title"] = "SendeNachricht";
+    Layout = "~/Views/Shared/_BenutzerLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Senden Sie eine neue Nachricht</h4>
+                  <form class="pt-3" method="post" >
+                     
+                     <div class="form-group">
+                      <label for="exampleInputName1">Gegenstand</label>
+                      <input type="text" asp-for="Gegenstand" class="form-control" id="exampleInputName1" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                      <label for="exampleInputName1">Empfänger Mail</label>
+                      <input type="text" asp-for="Empfaenger" class="form-control" id="exampleInputName1" placeholder="Name">
+                    </div>
+                        <label for="exampleTextarea1">Nachricht</label>
+                        <textarea class="form-control" asp-for="Inhalt" id="exampleTextarea1" rows="4"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-outline-primary mr-2">Senden</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+

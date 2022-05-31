@@ -38,6 +38,11 @@ namespace NSchicht.ArbeitsEinheit.Konkret
             return _eigenschaftDüo.RufAlleDaten();
         }
 
+        public List<Eigenschaft> TRufListeZurFilter()
+        {
+            throw new NotImplementedException();
+        }
+
         public Eigenschaft TRufZurID(int ID)
         {
             return _eigenschaftDüo.RufZurID(ID);

@@ -1,0 +1,29 @@
+﻿@model NSchicht.Core.Konkret.ToDoList
+@{
+    ViewData["Title"] = "ToDoListEinzelheiten";
+    Layout = "~/Views/Shared/_BenutzerLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">To Do List Einzelheiten</h4>
+                  @using(Html.BeginForm("Index","ToDoList", FormMethod.Post))
+                  {
+                    @Html.HiddenFor(x=>x.ID)
+                    <div class="form-group">
+                        <label for="exampleTextarea1">Inhalt</label>
+                        <textarea class="form-control" asp-for="Inhalt" id="exampleTextarea1" rows="4"></textarea>
+                      </div>
+                    }
+                </div>
+              </div>
+            </div>
+@*<h1>To Do List Einzelheiten</h1>
+<div>
+    <input type="text" name="ID" />
+    <br/>
+    <input type="text" name="Inhalt" />
+</div>
+
+*@

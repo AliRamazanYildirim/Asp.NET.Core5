@@ -13,5 +13,6 @@ namespace NSchicht.ArbeitsEinheit.Abstrakt
         void TLöschen(T einheit);
         List<T> TRufAlleDaten();
         T TRufZurID(int ID);
+        List<T> TRufListeZurFilter();
     }
 }

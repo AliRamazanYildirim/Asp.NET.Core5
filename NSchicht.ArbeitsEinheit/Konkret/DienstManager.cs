@@ -38,6 +38,11 @@ namespace NSchicht.ArbeitsEinheit.Konkret
            return _dienstDüo.RufAlleDaten();
         }
 
+        public List<Dienst> TRufListeZurFilter()
+        {
+            throw new NotImplementedException();
+        }
+
         public Dienst TRufZurID(int ID)
         {
             return _dienstDüo.RufZurID(ID);

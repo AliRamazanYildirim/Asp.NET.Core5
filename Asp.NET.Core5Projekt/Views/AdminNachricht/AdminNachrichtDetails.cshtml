@@ -1,0 +1,37 @@
+﻿@model NSchicht.Core.Konkret.AnwenderNachricht
+@{
+    ViewData["Title"] = "AdminNachrichtDetails";
+    Layout = "~/Views/Shared/_NeuerAdministratorLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Nachrichtdetails Site</h4>
+                  <form class="pt-3" method="post" >
+                     <div class="form-group">
+                      <label for="exampleInputName1">Absender</label>
+                      <input type="text" asp-for="AbsenderName" class="form-control" id="exampleInputName1" placeholder="Name">
+                    </div>
+                     <div class="form-group">
+                      <label for="exampleInputName1">EmpfängerName</label>
+                      <input type="text" asp-for="EmpfaengerName" class="form-control" id="exampleInputName1" placeholder="EmpfaengerName">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Gegenstand</label>
+                      <input type="text" asp-for="Gegenstand" class="form-control" id="exampleInputName1" placeholder="Gegenstand">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Datum</label>
+                      <input type="text" asp-for="Datum" class="form-control" id="exampleInputName1" placeholder="Datum">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleTextarea1">Inhalt</label>
+                        <textarea class="form-control" asp-for="Inhalt" id="exampleTextarea1" rows="4"></textarea>
+                      </div>
+                    <a asp-action="EmpfaengerNachrichtListe" class="btn btn-outline-primary mr-2">Eigehende Nachrichten</a>
+                    <a asp-action="AbsenderNachrichtListe" class="btn btn-outline-primary mr-2">Ausgehende Nachrichten</a>
+                    </form>
+                </div>
+              </div>
+            </div>

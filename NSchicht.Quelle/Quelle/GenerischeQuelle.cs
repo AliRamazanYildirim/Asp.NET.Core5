@@ -3,6 +3,7 @@ using NSchicht.Quelle.Konkret;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,6 +37,12 @@ namespace NSchicht.Quelle.Quelle
             using var w = new Kontext();
             return w.Set<T>().ToList();
             
+        }
+
+        public List<T> RufZurFilter(Expression<Func<T, bool>> filter)
+        {
+            using var w = new Kontext();
+            return w.Set<T>().Where(filter).ToList();
         }
 
         public T RufZurID(int ID)

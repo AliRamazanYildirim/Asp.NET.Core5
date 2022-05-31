@@ -35,6 +35,11 @@ namespace NSchicht.ArbeitsEinheit.Konkret
 
         }
 
+        public List<Über> TRufListeZurFilter()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Über TRufZurID(int ID)
         {
             return _überDüo.RufZurID(ID);

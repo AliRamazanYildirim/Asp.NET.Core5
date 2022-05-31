@@ -21,11 +21,10 @@ namespace NSchicht.Quelle.Konkret
         public DbSet<Aktenmappe> Aktenmappen { get; set; }
         public DbSet<Referenz> Referenze { get; set; }
         public DbSet<SozialerKontakt> SozialeKontakte { get; set; }
-        public DbSet<Benutzer> Benutzers { get; set; }
-        public DbSet<BenutzerNachricht> BenutzerNachrichten { get; set; }
         public DbSet<ToDoList> ToDoLists { get; set; }
         public DbSet<BenutzerRolle> BenutzerRollen { get; set; }
-       
+        public DbSet<AnwenderNachricht> AnwenderNachrichten { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

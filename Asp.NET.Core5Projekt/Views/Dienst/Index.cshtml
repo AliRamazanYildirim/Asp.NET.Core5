@@ -2,10 +2,43 @@
 @model List<Dienst>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NeuerAdministratorLayout.cshtml";
 }
+<div class="row">
 
-<div class="card-header border-0">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Dienste</h4>
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th> # </th>
+                            <th> Title </th>
+                            <th> Löschen </th>
+                            <th> Bearbeiten </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                           {
+                          <tr>
+                            <td> @item.DienstID </td>
+                            <td> @item.Title </td>
+                            <td><a href="/Dienst/LöschenDienst/@item.DienstID" class ="btn btn-outline-danger">Löschen</a></td>
+                            <td><a href="/Dienst/BearbeitenDienst/@item.DienstID" class ="btn btn-outline-success">Bearbeiten</a></td>
+                          </tr>                            
+                           }
+                        </tbody>
+                      </table>
+                       <a href="/Dienst/InsertDienst/" class="btn btn-outline-primary"> Neues Dienst Hinzufügen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+@*<div class="card-header border-0">
               <h3 class="mb-0">Tabelle der Dienstsliste</h3>
             </div>
             <!-- Light table -->
@@ -37,6 +70,6 @@
                 </tbody>
               </table>
               <a href="/Dienst/InsertDienst/" class="btn btn-primary"> Neue Dienst Hinzufügen</a>
-            </div>
+            </div>*@
 
 
