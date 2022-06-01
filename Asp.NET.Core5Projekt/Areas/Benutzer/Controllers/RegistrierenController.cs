@@ -1,4 +1,5 @@
 ﻿using Asp.NET.Core5Projekt.Areas.Benutzer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NSchicht.Core.Konkret;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Asp.NET.Core5Projekt.Areas.Benutzer.Controllers
 {
+    [AllowAnonymous]
     [Area("Benutzer")]
     [Route("Benutzer/[controller]/[action]")]
     public class RegistrierenController : Controller

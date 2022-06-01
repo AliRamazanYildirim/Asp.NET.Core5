@@ -1,0 +1,22 @@
+﻿@using NSchicht.Core.Konkret
+@model List<AnwenderNachricht>
+
+<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+    <h6 class="p-3 mb-0">Letzte Nachrichten</h6>
+    @foreach (var item in Model)
+    {
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item preview-item" href="/AdminNachricht/AdminNachrichtDetails/@item.AnwenderNachrichtID">
+        <div class="preview-thumbnail">
+            <img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/faces/face7.jpg" alt="image" class="rounded-circle profile-pic">
+        </div>
+        <div class="preview-item-content">
+            <p class="preview-subject ellipsis mb-1">@item.AbsenderName hat eine Nachricht gesendet.</p>
+            <p class="text-muted mb-0"> @(((DateTime)item.Datum).ToString("D")) </p>
+        </div>
+    </a>
+    }
+    <div class="dropdown-divider"></div>
+    <p class="p-3 mb-0 text-center">3 neue Nachrichten</p>
+</div>
+

@@ -28,13 +28,14 @@
                           <tr>
                             <td> @item.ErfahrungID </td>
                             <td> @item.Name </td>
-                            <td> @item.Datum </td>
+                            <td> @(((DateTime)item.Datum).ToString("D")) </td>
                             <td><a href="/Erfahrung/LöschenErfahrung/@item.ErfahrungID" class ="btn btn-outline-danger">Löschen</a></td>
                             <td><a href="/Erfahrung/BearbeitenErfahrung/@item.ErfahrungID" class ="btn btn-outline-success">Bearbeiten</a></td>
                           </tr>                            
                            }
                         </tbody>
                       </table>
+                      <br />
                        <a href="/Erfahrung/InsertErfahrung/" class="btn btn-outline-primary"> Neue Erfahrung Hinzufügen</a>
                     </div>
                   </div>

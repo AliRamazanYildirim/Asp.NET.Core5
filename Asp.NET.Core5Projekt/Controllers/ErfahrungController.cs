@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NSchicht.ArbeitsEinheit.Konkret;
 using NSchicht.Core.Konkret;
 using NSchicht.Quelle.EF;
 
 namespace Asp.NET.Core5Projekt.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ErfahrungController : Controller
     {
         ErfahrungManager _erfahrungManager = new ErfahrungManager(new EfErfahrungDüo());
