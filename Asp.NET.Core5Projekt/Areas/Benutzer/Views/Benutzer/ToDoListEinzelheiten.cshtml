@@ -8,14 +8,13 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">To Do List Einzelheiten</h4>
-                  @using(Html.BeginForm("Index","ToDoList", FormMethod.Post))
-                  {
+                  <form class="pt-3" method="post" >
                     @Html.HiddenFor(x=>x.ID)
                     <div class="form-group">
                         <label for="exampleTextarea1">Inhalt</label>
                         <textarea class="form-control" asp-for="Inhalt" id="exampleTextarea1" rows="4"></textarea>
                       </div>
-                    }
+                  </form>
                 </div>
               </div>
             </div>
