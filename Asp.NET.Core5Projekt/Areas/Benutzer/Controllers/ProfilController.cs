@@ -32,7 +32,7 @@ namespace Asp.NET.Core5Projekt.Areas.Benutzer.Controllers
         public async Task<IActionResult> Index(BenutzerBearbeitenZeigModell benutzerBearbeitenZeigModell)
         {
             var benutzer = await _userManager.FindByNameAsync(User.Identity.Name);
-            if(benutzerBearbeitenZeigModell!=null)
+            if(benutzerBearbeitenZeigModell.Bild!=null)
             {
                 var resource = Directory.GetCurrentDirectory();
                 var erweiterung = Path.GetExtension(benutzerBearbeitenZeigModell.Bild.FileName);

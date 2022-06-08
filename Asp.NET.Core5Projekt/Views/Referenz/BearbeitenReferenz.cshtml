@@ -8,7 +8,8 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Seite zum Bearbeiten von Referenzen</h4>
-                  <form class="pt-3" method="post" >                   
+                  <form class="pt-3" method="post" >  
+                      @Html.HiddenFor(x=>x.ReferenzID)
                      <div class="form-group">
                       <label for="exampleInputName1">Name</label>
                       <input type="text" asp-for="ClientName" class="form-control" id="exampleInputName1" placeholder="Name">

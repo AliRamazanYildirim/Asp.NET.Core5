@@ -16,7 +16,7 @@
             <div class="d-flex justify-content-between">
               <div>
                 <h3 class="h5 mb-1">@item.Name</h3>
-                <div class="text-muted text-small">@item.Datum</div>
+                <div class="text-muted text-small">@(((DateTime)item.Datum).ToString("D"))</div>
               </div><img src="@item.BildUrl" width="48" height="48" alt="ui-ux"/>
             </div>
           </div>

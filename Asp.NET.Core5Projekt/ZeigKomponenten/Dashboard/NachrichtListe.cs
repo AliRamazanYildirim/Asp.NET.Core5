@@ -6,12 +6,12 @@ namespace Asp.NET.Core5Projekt.ZeigKomponenten.Dashboard
 {
     public class NachrichtListe : ViewComponent
     {
-        //BenutzerNachrichtManager _benutzerNachrichtManager = new BenutzerNachrichtManager(new EfBenutzerNachrichtDüo());
+        NachrichtManager _nachrichtManager = new NachrichtManager(new EfNachrichtDüo());
         public IViewComponentResult Invoke()
         {
             //154.Lexion
-            //var werte = _benutzerNachrichtManager.RufBenutzerNachrichtMitBenutzerDienst();
-            return View();
+            var werte = _nachrichtManager.TRufAlleDaten();
+            return View(werte);
         }
     }
 }

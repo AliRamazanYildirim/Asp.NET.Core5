@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NSchicht.ArbeitsEinheit.Konkret;
 using NSchicht.Core.Konkret;
 using NSchicht.Quelle.EF;
@@ -6,6 +7,7 @@ using System;
 
 namespace Asp.NET.Core5Projekt.Controllers
 {
+    [AllowAnonymous]
     public class UrsprünglichController : Controller
     {
         public IActionResult Index()
