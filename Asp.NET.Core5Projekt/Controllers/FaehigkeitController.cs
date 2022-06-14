@@ -44,7 +44,7 @@ namespace Asp.NET.Core5Projekt.Controllers
             ViewBag.w2 = "Fähigkeiten";
             ViewBag.w3 = "Fähigkeiten Bearbeiten";
             var werte = _faehigkeitManager.TRufZurID(ID);
-            return View("Index");
+            return View(werte);
         }
         [HttpPost]
         public IActionResult BearbeitenFaehigkeit(Faehigkeit f)

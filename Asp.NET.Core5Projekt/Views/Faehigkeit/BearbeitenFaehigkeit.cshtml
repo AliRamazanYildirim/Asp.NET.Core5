@@ -7,12 +7,9 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Seite zum Bearbeiten von Fähigkeiten</h4>
-                  @using(Html.BeginForm("BearbeitenFaehigkeit","Faehigkeit", FormMethod.Post))
-                  {
-                    <div class="form-group">
-                      <label for="exampleInputName1">ID</label>
-                      <input type="text" asp-for="FaehigkeitID"  class="form-control" id="exampleInputName1" placeholder="Name">
-                    </div>
+                  <form class="pt-3" method="post" >
+                  
+                    @Html.HiddenFor(x=>x.FaehigkeitID)
                      <div class="form-group">
                       <label for="exampleInputName1">Title</label>
                       <input type="text" asp-for="Title" class="form-control" id="exampleInputName1" placeholder="Nachname">
@@ -23,7 +20,7 @@
                     </div>
                     <button type="submit" class="btn btn-outline-primary mr-2">Bearbeiten</button>
                     <button class="btn btn-light">Abbrechen</button>
-                    }
+                    </form>
                 </div>
               </div>
             </div>
